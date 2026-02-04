@@ -1,17 +1,14 @@
 clear all;
 close all;
 clc;
-pkg load image;
-img = imread("ss.png");
-figure
+img=imread("goku.jpg");
+subplot(1,2,1);
 imshow(img);
-grayscale_img = rgb2gray(img);
-figure
-imshow(grayscale_img);
-title("grayscale image");
-imwrite(grayscale_img, "original.jpg");
-output = 255-grayscale_img;
-figure
-imshow(uint8(output));
-title("output image");
-imwrite(unit8(output), "negative_kp");
+title("Original Color Image");
+
+grayscaleImg=rgb2gray(img);
+subplot(1,2,2);
+imshow(grayscaleImg);
+title("Grayscale Image");
+
+imwrite(uint8(grayscaleImg),"Output/1grayscaleImage.png");
